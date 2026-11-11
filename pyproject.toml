@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "behavtrack"
+version = "0.2.0"
+description = "Webcam-based rodent behavior tracking and analysis (classic CV now, pose estimation later)"
+requires-python = ">=3.10"
+dependencies = ["opencv-python>=4.8", "numpy>=1.24", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+pose = ["h5py>=3.8"]
+classify = ["scikit-learn>=1.3"]
+dev = ["pytest>=7"]
+server = ["cryptography>=44"]
+
+[project.scripts]
+behavtrack = "behavtrack.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["behavtrack*"]
+
+[tool.setuptools.package-data]
+behavtrack = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,3 @@
+video,animal_id,group,start_s,end_s,params.novel_object,notes
+videos/M01_test.mp4,M01,control,5,305,object_2,
+videos/M02_test.mp4,M02,drug,5,305,object_1,새 물체 위치 바꿈
